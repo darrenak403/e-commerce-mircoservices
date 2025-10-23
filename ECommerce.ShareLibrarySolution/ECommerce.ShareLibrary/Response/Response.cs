@@ -1,6 +1,4 @@
-﻿namespace ECommerce.ShareLibrary.Response
+﻿namespace ECommerce.ShareLibrary.Responses
 {
-    public class Response
-    {
-    }
+    public record Response(bool Flag = false, string Message = null!);
 }
