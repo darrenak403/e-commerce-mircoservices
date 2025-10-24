@@ -4,8 +4,8 @@
     {
         public int Id { get; set; }
         public int ProductId { get; set; }
-        public string ClientId { get; set; }
+        public int ClientId { get; set; }
         public int PurchaseQuantity { get; set; }
-        public DateTime OrderedData { get; set; } = DateTime.UtcNow;
+        public DateTime OrderedDate { get; set; } = DateTime.UtcNow;
     }
 }
