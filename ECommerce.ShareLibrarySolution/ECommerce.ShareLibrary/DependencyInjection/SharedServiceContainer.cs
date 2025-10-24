@@ -9,7 +9,7 @@ namespace ECommerce.ShareLibrary.DependencyInjection
 {
     public static class SharedServiceContainer
     {
-        public static IServiceCollection AddShareServiceS<TContext>(this IServiceCollection services, IConfiguration configuration, string fileName) where TContext : DbContext
+        public static IServiceCollection AddShareServices<TContext>(this IServiceCollection services, IConfiguration configuration, string fileName) where TContext : DbContext
         {
             //Add Generic Database Context
             services.AddDbContext<TContext>(options =>
