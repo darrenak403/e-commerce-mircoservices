@@ -1,0 +1,32 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Serilog;
+
+namespace ECommerce.ShareLibrary.DependencyInjection
+{
+    public static class SharedServiceContainer
+    {
+        public static IServiceCollection AddShareServiceS<TContext>(this IServiceCollection services, IConfiguration configuration, string fileName) where TContext : DbContext
+        {
+            //Add Generic Database Context
+            services.AddDbContext<TContext>(options =>
+                options.UseSqlServer(
+                    configuration.GetConnectionString("eCommerceConnection"),
+                    sqlserverOption => sqlserverOption.EnableRetryOnFailure()
+                    ));
+
+            //confiure serilog logging
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Information()
+                .WriteTo.Debug()
+                .WriteTo.Console()
+                .WriteTo.File(path: $"{fileName}-.text",
+                restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Information,
+                outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level: u3}] {message:lj}{NewLine}{Exception}",
+                rollingInterval: RollingInterval.Day).CreateLogger();
+
+            return services;
+        }
+    }
+}
