@@ -3,8 +3,11 @@ using ProductApi.Domain.Entities;
 
 namespace ProductApi.Infrastructure.Data
 {
-    public class ProductDbContext(DbContextOptions<ProductDbContext> options) : DbContext(options)
+    public class ProductDbContext : DbContext
     {
+        public ProductDbContext(DbContextOptions<ProductDbContext> options) : base(options)
+        {
+        }
         public DbSet<Product> Products { get; set; }
     }
 }

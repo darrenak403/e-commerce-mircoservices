@@ -4,7 +4,7 @@ using ProductApi.Application.DTOs;
 using ProductApi.Application.DTOs.Conversions;
 using ProductApi.Application.Interfaces;
 
-namespace ProducApi.Presentation.Controllers
+namespace ProductApi.Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
