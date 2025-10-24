@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductApi.Application", "ProductApi.Application\ProductApi.Application.csproj", "{7AC5A316-64F6-4A7D-8B67-0690BA9D2645}"
 EndProject
@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductApi.Infrastructure",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProducApi.Presentation", "ProducApi.Presentation\ProducApi.Presentation.csproj", "{06E97C9E-98E7-4C8F-92C9-515F3C064C7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.ShareLibrary", "..\..\..\ECommerce.ShareLibrarySolution\ECommerce.ShareLibrary\ECommerce.ShareLibrary.csproj", "{9357D484-4838-6A71-5C40-95FD5BFDA6AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.ShareLibrary", "..\..\ECommerce.ShareLibrarySolution\ECommerce.ShareLibrary\ECommerce.ShareLibrary.csproj", "{219D737C-5387-019E-BD7B-FAC40E2AF2EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{06E97C9E-98E7-4C8F-92C9-515F3C064C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06E97C9E-98E7-4C8F-92C9-515F3C064C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06E97C9E-98E7-4C8F-92C9-515F3C064C7F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9357D484-4838-6A71-5C40-95FD5BFDA6AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9357D484-4838-6A71-5C40-95FD5BFDA6AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9357D484-4838-6A71-5C40-95FD5BFDA6AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9357D484-4838-6A71-5C40-95FD5BFDA6AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{219D737C-5387-019E-BD7B-FAC40E2AF2EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{219D737C-5387-019E-BD7B-FAC40E2AF2EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{219D737C-5387-019E-BD7B-FAC40E2AF2EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{219D737C-5387-019E-BD7B-FAC40E2AF2EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
