@@ -6,7 +6,7 @@ using Polly.Registry;
 
 namespace OrderApi.Application.Services
 {
-    public class OderService(IOrder orderInterface, HttpClient httpClient, ResiliencePipelineProvider<string> resiliencePipeline) : IOrderService
+    public class OrderService(IOrder orderInterface, HttpClient httpClient, ResiliencePipelineProvider<string> resiliencePipeline) : IOrderService
     {
         //GET PRODUCT
         public async Task<ProductDTO> GetProduct(int productId)
