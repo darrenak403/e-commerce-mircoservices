@@ -40,11 +40,7 @@
                 "TtlSeconds": 60,
                 "Region": "default",
                 "Header": "eCommerce-Caching-Control"
-            },
-            //"AuthenticationOptions": {
-            //    "AuthenticationProviderKey": "Bearer",
-            //    "AllowedScopes": []
-            //}
+            }
         },
 
         //GET Product By ID
@@ -63,11 +59,7 @@
                 "TtlSeconds": 60,
                 "Region": "default",
                 "Header": "eCommerce-Caching-Control"
-            },
-            //"AuthenticationOptions": {
-            //    "AuthenticationProviderKey": "Bearer",
-            //    "AllowedScopes": []
-            //}
+            }
         },
 
         //Product => Post, Put, Delete -> all

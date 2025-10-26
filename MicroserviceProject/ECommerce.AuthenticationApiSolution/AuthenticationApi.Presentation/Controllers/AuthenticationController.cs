@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AuthenticationApi.Presentation.Controllers
 {
-    [Route("users/")]
+    [Route("users")]
     [ApiController]
     [AllowAnonymous]
     public class AuthenticationController(IUser userInterface) : ControllerBase

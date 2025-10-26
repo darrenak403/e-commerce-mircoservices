@@ -13,7 +13,7 @@ namespace OrderApi.Application.Services
         {
             //Call Product API using HttpClient
             //Redirect this call to the API Gateway since product Api is not response to outsides.
-            var getProduct = await httpClient.GetAsync($"/products/{productId}");
+            var getProduct = await httpClient.GetAsync($"products/{productId}");
             if (!getProduct.IsSuccessStatusCode)
                 return null!;
 
@@ -26,7 +26,7 @@ namespace OrderApi.Application.Services
         {
             //Call Product API using HttpClient
             //Redirect this call to the API Gateway since product Api is not response to outsides.
-            var getUser = await httpClient.GetAsync($"/users/{userId}");
+            var getUser = await httpClient.GetAsync($"users/{userId}");
             if (!getUser.IsSuccessStatusCode)
                 return null!;
 
