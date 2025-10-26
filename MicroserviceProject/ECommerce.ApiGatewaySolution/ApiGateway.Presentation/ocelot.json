@@ -41,10 +41,10 @@
                 "Region": "default",
                 "Header": "eCommerce-Caching-Control"
             },
-            "AuthenticationOptions": {
-                "AuthenticationProviderKey": "Bearer",
-                "AllowedScopes": []
-            }
+            //"AuthenticationOptions": {
+            //    "AuthenticationProviderKey": "Bearer",
+            //    "AllowedScopes": []
+            //}
         },
 
         //GET Product By ID
@@ -64,10 +64,10 @@
                 "Region": "default",
                 "Header": "eCommerce-Caching-Control"
             },
-            "AuthenticationOptions": {
-                "AuthenticationProviderKey": "Bearer",
-                "AllowedScopes": []
-            }
+            //"AuthenticationOptions": {
+            //    "AuthenticationProviderKey": "Bearer",
+            //    "AllowedScopes": []
+            //}
         },
 
         //Product => Post, Put, Delete -> all
@@ -142,7 +142,7 @@
             "DownstreamHostAndPorts": [
                 {
                     "Host": "localhost",
-                    "Port": 5001
+                    "Port": 5002
                 }
             ],
             "UpstreamPathTemplate": "/orders/{everything}",

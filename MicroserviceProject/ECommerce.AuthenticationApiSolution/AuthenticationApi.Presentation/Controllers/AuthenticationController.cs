@@ -1,12 +1,14 @@
 ﻿using AuthenticationApi.Application.DTOs;
 using AuthenticationApi.Application.Interfaces;
 using ECommerce.ShareLibrary.Responses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AuthenticationApi.Presentation.Controllers
 {
     [Route("users/")]
     [ApiController]
+    [AllowAnonymous]
     public class AuthenticationController(IUser userInterface) : ControllerBase
     {
         [HttpPost]
@@ -27,6 +29,7 @@ namespace AuthenticationApi.Presentation.Controllers
         }
 
         [HttpGet("{id:int}")]
+        [Authorize]
         public async Task<ActionResult<GetUserDTO>> GetUser(int id)
         {
             if (id <= 0) return BadRequest("Invalid user id");

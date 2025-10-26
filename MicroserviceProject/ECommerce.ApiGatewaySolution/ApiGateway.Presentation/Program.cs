@@ -1,9 +1,10 @@
+using ApiGateway.Presentation.Middleware;
 using ECommerce.ShareLibrary.DependencyInjection;
 using Ocelot.Cache.CacheManager;
 using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
 var builder = WebApplication.CreateBuilder(args);
 
-var app = builder.Build();
 
 //
 builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
@@ -19,9 +20,14 @@ builder.Services.AddCors(options =>
     });
 });
 
-app.UseCors();
 //
+var app = builder.Build();
 app.UseHttpsRedirection();
+//
+app.UseCors();
+app.UseMiddleware<AttachSignatureToRequest>();
+app.UseOcelot().Wait();
+//
 
 
 
