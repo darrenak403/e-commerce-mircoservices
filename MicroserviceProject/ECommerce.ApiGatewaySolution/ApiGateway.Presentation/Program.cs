@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Cấu hình
 builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
 builder.Services.AddOcelot().AddCacheManager(x => x.WithDictionaryHandle());
-JWTAuthenticationScheme.AddJWTAuthenticationScheme(builder.Services, builder.Configuration);
+builder.Services.AddJWTAuthenticationScheme(builder.Configuration);
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>

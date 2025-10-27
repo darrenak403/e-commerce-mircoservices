@@ -58,11 +58,13 @@ namespace AuthenticationApi.Infrastructure.Repositories
             if (!string.IsNullOrEmpty(user.Role) || !Equals("string", user.Role))
                 claims.Add(new Claim(ClaimTypes.Role, user.Role!));
 
+            var expires = DateTime.UtcNow.AddHours(2);
+
             var token = new JwtSecurityToken(
                 issuer: configuration["Authentication:Issuer"],
                 audience: configuration["Authentication:Audience"],
                 claims: claims,
-                expires: null,
+                expires: expires,
                 signingCredentials: credentials
                 );
 

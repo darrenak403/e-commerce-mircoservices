@@ -99,8 +99,7 @@
                 "Header": "eCommerce-Caching-Control"
             },
             "AuthenticationOptions": {
-                "AuthenticationProviderKey": "Bearer",
-                "AllowedScopes": []
+                "AuthenticationProviderKey": "Bearer"
             }
         },
 

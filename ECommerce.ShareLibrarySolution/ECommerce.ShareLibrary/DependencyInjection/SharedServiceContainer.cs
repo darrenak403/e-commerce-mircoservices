@@ -29,7 +29,7 @@ namespace ECommerce.ShareLibrary.DependencyInjection
                 rollingInterval: RollingInterval.Day).CreateLogger();
 
             //Add JWT Authentication Scheme
-            JWTAuthenticationScheme.AddJWTAuthenticationScheme(services, configuration);
+            services.AddJWTAuthenticationScheme(configuration);
             return services;
         }
 
