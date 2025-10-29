@@ -1,4 +1,4 @@
-# 🛍️ ECommerce Microservice Architecture
+# ECommerce Microservice Architecture
 
 This project is a **complete eCommerce system** built using a **Microservice Architecture** with an **API Gateway**.  
 It demonstrates how to design, build, and integrate independent services to create a scalable, secure, and high-performance online shopping platform.
