@@ -39,12 +39,10 @@ The **API Gateway** acts as a single entry point that:
 |-------|-------------|
 | Backend Framework | ASP.NET Core / .NET 8 |
 | API Gateway | Ocelot |
-| Database | SQL Server / PostgreSQL (per service) |
+| Database | SQL Server |
 | Authentication | JWT Bearer Token |
-| Communication | HTTP / gRPC / Message Queue (future-ready) |
-| Caching | Redis |
-| Logging | Serilog / ELK Stack | Not yet
-| Containerization | Docker / Docker Compose | Not yet
+| Communication | HTTP |
+| Logging | Serilog |
 
 ---
 
