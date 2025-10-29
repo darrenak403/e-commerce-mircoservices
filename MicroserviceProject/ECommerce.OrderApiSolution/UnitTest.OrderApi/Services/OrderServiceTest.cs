@@ -1,17 +1,25 @@
-﻿using System.Net;
+﻿using System.Linq.Expressions;
+using System.Net;
 using System.Net.Http.Json;
 using FakeItEasy;
 using FluentAssertions;
 using OrderApi.Application.DTOs;
+using OrderApi.Application.Interfaces;
 using OrderApi.Application.Services;
+using OrderApi.Domain.Entities;
 
 namespace UnitTest.OrderApi.Services
 {
     public class OrderServiceTest
     {
         private readonly IOrderService orderServiceInterface;
+        private readonly IOrder orderInterface;
 
-        public OrderServiceTest() => orderServiceInterface = A.Fake<IOrderService>();
+        public OrderServiceTest()
+        {
+            orderInterface = A.Fake<IOrder>();
+            orderServiceInterface = A.Fake<IOrderService>();
+        }
 
         //CREATE FAKE: HTTP MESSAGE HANDLER
         public class FakeHttpMessageHandler : HttpMessageHandler
@@ -81,5 +89,31 @@ namespace UnitTest.OrderApi.Services
             //Assert
             result.Should().BeNull();
         }
+
+        //GET CLIENT ORDERS BY ID
+        [Fact]
+        public async Task GetOrderByClientId_OrderExist_ReturnOrderDetails()
+        {
+            //Arrange
+            int clientId = 1;
+            var orders = new List<Order>
+            {
+                new Order { Id = 1, ClientId = clientId, ProductId = 1, PurchaseQuantity = 2, OrderedDate = DateTime.UtcNow },
+                new Order { Id = 2, ClientId = clientId, ProductId = 2, PurchaseQuantity = 3, OrderedDate = DateTime.UtcNow }
+            };
+
+            //mock the GetOrderBy method
+            A.CallTo(() => orderInterface.GetOrdersAsync(A<Expression<Func<Order, bool>>>.Ignored)).Returns(orders);
+            var _orderService = new OrderService(orderInterface, null!, null!);
+
+            //Act
+            var result = await _orderService.GetOrdersByClientId(clientId);
+
+            //Assert
+            result.Should().NotBeNull();
+            result.Should().HaveCount(2);
+            result.Should().HaveCountGreaterThanOrEqualTo(2);
+        }
+
     }
 }
